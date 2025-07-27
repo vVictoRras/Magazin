@@ -32,18 +32,18 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar style={{ backgroundColor: '#1976d2' }} variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <Navbar.Brand as={Link} to='/'>
             <img src={logo} alt='ProShop' />
-            MAGAZIN4IK
+            AGAZIN4IK
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
               <SearchBox />
               <Nav.Link as={Link} to='/cart'>
-                <FaShoppingCart /> Cart
+                <FaShoppingCart /> Корзина
                 {cartItems.length > 0 && (
                   <Badge pill bg='success' style={{ marginLeft: '5px' }}>
                     {cartItems.reduce((a, c) => a + c.qty, 0)}
@@ -63,7 +63,7 @@ const Header = () => {
                 </>
               ) : (
                 <Nav.Link as={Link} to='/login'>
-                  <FaUser /> Sign In
+                  <FaUser /> Войти
                 </Nav.Link>
               )}
 
