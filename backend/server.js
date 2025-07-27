@@ -11,16 +11,19 @@ import uploadRoutes from './routes/uploadRoutes.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import cors from 'cors';
 
-app.use(cors({
-  origin: '*',
-  credentials: true,
-}));
+
 const port = process.env.PORT || 5000;
 
 connectDB();
 
 const app = express();
-
+app.use = function(corsMiddleware) {
+  
+};
+app.use(cors({
+  origin: '*',
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -34,6 +37,9 @@ app.get('/api/config/paypal', (req, res) =>
   res.send({ clientId: process.env.PAYPAL_CLIENT_ID })
 );
 
+app.get = function(s, param2) {
+  
+};
 if (process.env.NODE_ENV === 'production') {
   const __dirname = path.resolve();
   app.use('/uploads', express.static('/var/data/uploads'));
@@ -53,6 +59,9 @@ if (process.env.NODE_ENV === 'production') {
 app.use(notFound);
 app.use(errorHandler);
 
+app.listen = function(port, param2) {
+  
+};
 app.listen(port, () =>
   console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`)
 );
